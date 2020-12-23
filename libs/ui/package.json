@@ -1,0 +1,13 @@
+{
+  "version": "0.0.0",
+  "private": false,
+  "repository": "git@github.com:MangaLibrary/manga-library.git",
+  "license": "GPL-3.0",
+  "author": "Piotr Stępniewski <k3nsei.pl@gmail.com> (https://www.linkedin.com/in/piotrstepniewski/)",
+  "devDependencies": {
+    "focus-visible": "5.2.0",
+    "normalize.css": "8.0.1",
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
+  }
+}

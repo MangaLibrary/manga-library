@@ -1,0 +1,46 @@
+{
+  "extends": ["config:base", ":pinOnlyDevDependencies"],
+  "schedule": ["every weekend"],
+  "packageRules": [
+    {
+      "packagePatterns": ["^@babel", "^babel"],
+      "groupName": "babel packages",
+      "groupSlug": "babel"
+    },
+    {
+      "packagePatterns": ["^@commitlint"],
+      "groupName": "commitlint packages",
+      "groupSlug": "commitlint"
+    },
+    {
+      "packagePatterns": ["^@nrwl"],
+      "groupName": "nrwl packages",
+      "groupSlug": "nrwl"
+    },
+    {
+      "packagePatterns": ["^@types"],
+      "groupName": "types packages",
+      "groupSlug": "types"
+    },
+    {
+      "packagePatterns": ["^@typescript-eslint", "^eslint"],
+      "groupName": "eslint packages",
+      "groupSlug": "eslint"
+    },
+    {
+      "packagePatterns": ["^jest", "jest$"],
+      "groupName": "jest packages",
+      "groupSlug": "jest"
+    },
+    {
+      "packagePatterns": ["^prettier"],
+      "groupName": "prettier packages",
+      "groupSlug": "prettier"
+    },
+    {
+      "packagePatterns": ["^react"],
+      "groupName": "react packages",
+      "groupSlug": "react"
+    }
+  ]
+}

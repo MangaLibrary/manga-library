@@ -1,0 +1,50 @@
+{
+  "root": true,
+  "ignorePatterns": ["**/*"],
+  "plugins": ["@nrwl/nx", "header"],
+  "rules": {
+    "header/header": [
+      2,
+      "block",
+      [
+        "!",
+        " * @license",
+        {
+          "pattern": " * Copyright \\(c\\) \\d{4} Piotr Stępniewski \\<k3nsei\\.pl@gmail\\.com\\>",
+          "template": " * Copyright (c) 2020 Piotr Stępniewski <k3nsei.pl@gmail.com>"
+        },
+        " *",
+        " * Use of this source code is governed by an GPL-3.0 license that can be",
+        " * found in the LICENSE file in the root directory of this source tree.",
+        " "
+      ],
+      2
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "@nrwl/nx/enforce-module-boundaries": [
+          "error",
+          {
+            "enforceBuildableLibDependency": true,
+            "allow": [],
+            "depConstraints": [{ "sourceTag": "*", "onlyDependOnLibsWithTags": ["*"] }]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@nrwl/nx/typescript"],
+      "parserOptions": { "project": "./tsconfig.*?.json" },
+      "rules": {}
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "extends": ["plugin:@nrwl/nx/javascript"],
+      "rules": {}
+    }
+  ]
+}
