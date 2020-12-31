@@ -1,0 +1,51 @@
+name: Publish Docs
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  deploy-docs:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Read .nvmrc
+        id: nvm
+        run: echo "##[set-output name=NODE_VERSION;]$(cat .nvmrc)"
+
+      - name: Setup node.js
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: '${{ steps.nvm.outputs.NODE_VERSION }}'
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: Restore dependencies cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            ${{ steps.yarn-cache-dir.outputs.dir }}
+            '~/.cache/Cypress'
+          key: ${{ runner.os }}-dependencies-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-dependencies-
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile --silent
+
+      - name: Build
+        if: ${{ github.ref == 'refs/heads/main' && success() }}
+        run: npx nx run ui:build-storybook --docsMode --quiet --skip-nx-cache
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_branch: gh-pages
+          publish_dir: ./dist/storybook/ui
+          commit_message: 'chore(deploy): docs page'
+          allow_empty_commit: true
