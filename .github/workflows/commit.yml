@@ -1,0 +1,90 @@
+name: Commit
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - id: nvm
+        name: Read .nvmrc
+        run: echo "##[set-output name=NODE_VERSION;]$(cat .nvmrc)"
+
+      - name: Setup node.js
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: '${{ steps.nvm.outputs.NODE_VERSION }}'
+
+      - name: Restore dependencies cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            '**/node_modules'
+            '~/.cache/Cypress'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile --silent
+
+      - name: Check code format
+        run: yarn run format:check
+
+      - name: Lint
+        run: npx nx run-many --target=lint --all
+
+      - name: Build
+        run: npx nx run-many --target=build --all
+
+      - name: Test
+        run: npx nx run-many --target=test --all
+
+      - name: E2E
+        run: npx nx run-many --target=e2e --all
+
+  deploy:
+    runs-on: ubuntu-20.04
+    if: ${{ github.ref == 'refs/heads/main' }}
+    needs: build
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - id: nvm
+        name: Read .nvmrc
+        run: echo "##[set-output name=NODE_VERSION;]$(cat .nvmrc)"
+
+      - name: Setup node.js
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: '${{ steps.nvm.outputs.NODE_VERSION }}'
+
+      - name: Restore dependencies cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            '**/node_modules'
+            '~/.cache/Cypress'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile --silent
+
+      - name: Build
+        if: ${{ github.ref == 'refs/heads/main' && success() }}
+        run: npx nx run ui:build-storybook --docsMode --quiet --skip-nx-cache
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3.7.3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_branch: gh-pages
+          publish_dir: ./dist/storybook/ui
+          commit_message: 'chore(deploy): docs page'
+          allow_empty_commit: true

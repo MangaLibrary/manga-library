@@ -1,0 +1,44 @@
+name: Release Please
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  release-please-pr-lib-utils:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: GoogleCloudPlatform/release-please-action@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          release-type: node
+          command: release-pr
+          bump-minor-pre-major: true
+          monorepo-tags: true
+          package-name: '@manga-library/utils'
+          path: libs/utils/
+
+  release-please-pr-lib-ui:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: GoogleCloudPlatform/release-please-action@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          release-type: node
+          command: release-pr
+          bump-minor-pre-major: true
+          monorepo-tags: true
+          package-name: '@manga-library/ui'
+          path: libs/ui/
+
+  release-please-pr-app-client:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: GoogleCloudPlatform/release-please-action@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          release-type: node
+          command: release-pr
+          bump-minor-pre-major: true
+          monorepo-tags: true
+          package-name: '@manga-library/client'
