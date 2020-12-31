@@ -1,0 +1,56 @@
+# dependencies
+node_modules/
+
+# npm
+!package-lock.json
+npm-shrinkwrap.json
+npm-debug.log
+
+# yarn
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+!yarn.lock
+yarn-error.log
+
+# husky
+.husky/_/
+
+# compiled output
+dist/
+coverage/
+tmp/
+out-tsc/
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# profiling files
+chrome-profiler-events*.json
+speed-measure-plugin*.json
+
+# misc
+.sass-cache/
+connect.lock
+libpeerconnection.log
+testem.log
+typings/
+
+# system files
+.DS_Store
+Thumbs.db

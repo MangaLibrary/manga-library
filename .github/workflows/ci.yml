@@ -1,0 +1,64 @@
+name: Commit
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    strategy:
+      fail-fast: true
+      matrix:
+        package: [utils, ui, client]
+        include:
+          - package: ui
+            with-e2e: true
+          - package: client
+            with-e2e: true
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Read .nvmrc
+        id: nvm
+        run: echo "##[set-output name=NODE_VERSION;]$(cat .nvmrc)"
+
+      - name: Setup node.js
+        uses: actions/setup-node@v2.1.5
+        with:
+          node-version: '${{ steps.nvm.outputs.NODE_VERSION }}'
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: Restore dependencies cache
+        uses: actions/cache@v2.1.4
+        with:
+          path: |
+            ${{ steps.yarn-cache-dir.outputs.dir }}
+            '~/.cache/Cypress'
+          key: ${{ runner.os }}-dependencies-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-dependencies-
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile --silent
+
+      - name: Check code format
+        run: yarn run format:check
+
+      - name: Lint
+        run: 'npx nx lint ${{ matrix.package }}'
+
+      - name: Build
+        run: 'npx nx build ${{ matrix.package }} --with-deps'
+
+      - name: Test
+        run: 'npx nx test ${{ matrix.package }}'
+
+      - name: E2E
+        if: ${{ matrix.with-e2e }}
+        run: 'npx nx e2e ${{ matrix.package }}-e2e'
