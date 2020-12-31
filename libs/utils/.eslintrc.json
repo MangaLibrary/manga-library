@@ -1,0 +1,20 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "jest": true,
+    "node": true
+  },
+  "ignorePatterns": ["!**/*"],
+  "extends": ["../../.eslintrc.json"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "prefer-arrow-callback": "error",
+        "@typescript-eslint/no-explicit-any": "off"
+      }
+    }
+  ]
+}
