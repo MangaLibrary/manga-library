@@ -1,0 +1,23 @@
+{
+  "name": "@manga-library/utils",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "homepage": "https://github.com/MangaLibrary/manga-library",
+  "bugs": {
+    "url": "https://github.com/MangaLibrary/manga-library/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MangaLibrary/manga-library.git"
+  },
+  "license": "GPL-3.0",
+  "author": {
+    "name": "Piotr Stępniewski",
+    "email": "k3nsei.pl@gmail.com",
+    "url": "https://www.linkedin.com/in/piotrstepniewski/"
+  },
+  "peerDependencies": {
+    "@ctrl/tinycolor": "^3.3.2"
+  }
+}
