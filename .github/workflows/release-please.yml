@@ -1,0 +1,30 @@
+name: Release Please
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  release-please-pr:
+    runs-on: ubuntu-20.04
+    strategy:
+      fail-fast: false
+      matrix:
+        package: [utils, ui, client]
+        include:
+          - package: utils
+            package-path: 'libs/utils/'
+          - package: ui
+            package-path: 'libs/ui/'
+          - package: client
+            package-path: 'apps/client/'
+    steps:
+      - uses: GoogleCloudPlatform/release-please-action@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          release-type: node
+          command: release-pr
+          bump-minor-pre-major: true
+          monorepo-tags: true
+          package-name: '@manga-library/${{ matrix.package }}'
+          path: ${{ matrix.package-path }}
