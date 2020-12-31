@@ -1,0 +1,79 @@
+{
+  "root": true,
+  "ignorePatterns": ["**/*"],
+  "plugins": ["header", "@nrwl/nx"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "header/header": [
+          2,
+          "block",
+          [
+            "!",
+            " * @license",
+            {
+              "pattern": " \\* Copyright \\(c\\) \\d{4} Piotr Stępniewski \\<k3nsei\\.pl@gmail\\.com\\>",
+              "template": " * Copyright (c) 2021 Piotr Stępniewski <k3nsei.pl@gmail.com>"
+            },
+            " *",
+            " * Use of this source code is governed by an GPL-3.0 license that can be",
+            " * found in the LICENSE file in the root directory of this source tree.",
+            " "
+          ],
+          2
+        ],
+        "@nrwl/nx/enforce-module-boundaries": [
+          "error",
+          {
+            "enforceBuildableLibDependency": true,
+            "allow": [],
+            "depConstraints": [
+              {
+                "sourceTag": "*",
+                "onlyDependOnLibsWithTags": ["*"]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@nrwl/nx/typescript"],
+      "rules": {
+        "@typescript-eslint/explicit-member-accessibility": [
+          "error",
+          {
+            "accessibility": "explicit",
+            "overrides": {
+              "accessors": "no-public",
+              "constructors": "no-public",
+              "properties": "no-public"
+            }
+          }
+        ],
+        "@typescript-eslint/no-explicit-any": [
+          "error",
+          {
+            "fixToUnknown": false,
+            "ignoreRestArgs": true
+          }
+        ],
+        "@typescript-eslint/no-inferrable-types": "off"
+      }
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "extends": ["plugin:@nrwl/nx/javascript"],
+      "rules": {}
+    },
+    {
+      "files": ["**/.storybook/*.js", "**/.storybook/*.jsx"],
+      "extends": ["plugin:@nrwl/nx/javascript"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
+  ]
+}
