@@ -58,7 +58,7 @@
     "@nrwl/tao": "11.0.18",
     "@nrwl/web": "11.0.18",
     "@nrwl/workspace": "11.0.18",
-    "@testing-library/react": "11.2.2",
+    "@testing-library/react": "11.2.3",
     "@types/jest": "26.0.19",
     "@types/node": "14.14.16",
     "@types/react": "17.0.0",
