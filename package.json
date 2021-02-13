@@ -108,7 +108,7 @@
     "@types/webpack": "4.41.26",
     "@typescript-eslint/eslint-plugin": "4.14.2",
     "@typescript-eslint/parser": "4.14.2",
-    "all-contributors-cli": "6.19.0",
+    "all-contributors-cli": "6.20.0",
     "babel-jest": "26.6.3",
     "babel-loader": "8.2.2",
     "cross-env": "7.0.3",
