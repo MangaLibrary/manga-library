@@ -2106,6 +2106,18 @@
     strip-json-comments "2.0.1"
     tslib "^2.0.0"
 
+"@nrwl/devkit@11.2.12":
+  version "11.2.12"
+  resolved "https://registry.yarnpkg.com/@nrwl/devkit/-/devkit-11.2.12.tgz#d0f21d46063878e9baa6f6356db939ce09434033"
+  integrity sha512-zc8Otk2PmtE5YJ+poUePVonEIAMKE0jo+Iw4Pyx/YMWZ/IzKQLp2/EZgqNqLZeXrtfBc2iqdbnaKQRUADb4s/Q==
+  dependencies:
+    "@nrwl/tao" "11.2.12"
+    ejs "^3.1.5"
+    ignore "^5.0.4"
+    semver "6.3.0"
+    strip-json-comments "2.0.1"
+    tslib "^2.0.0"
+
 "@nrwl/eslint-plugin-nx@11.2.10":
   version "11.2.10"
   resolved "https://registry.yarnpkg.com/@nrwl/eslint-plugin-nx/-/eslint-plugin-nx-11.2.10.tgz#16f57edcb3a3a88bc0b7afc3a57a594ec2bee487"
@@ -2121,6 +2133,17 @@
   integrity sha512-A7/RbgsG8Sx6Ul7WULpIfLMMoJ4TzdipOrv2MgCc1Mj5PpwqO8jVRWzhtv1bwwM058RmAJXXol2Ni8qoCA5oXQ==
   dependencies:
     "@nrwl/devkit" "11.2.10"
+    jest-resolve "^26.6.2"
+    rxjs "^6.5.4"
+    strip-json-comments "2.0.1"
+    tslib "^2.0.0"
+
+"@nrwl/jest@11.2.12":
+  version "11.2.12"
+  resolved "https://registry.yarnpkg.com/@nrwl/jest/-/jest-11.2.12.tgz#db78adfe55acec02c25f2e5cf806b7250074e901"
+  integrity sha512-VxOy1prUho01XajIJOtR13KzpwkCZAcWKNJEgDMH7Ed7ZSRZLKNiOCVD6pykC/L9EOOXGMWpOcK8t4rg8BWSWA==
+  dependencies:
+    "@nrwl/devkit" "11.2.12"
     jest-resolve "^26.6.2"
     rxjs "^6.5.4"
     strip-json-comments "2.0.1"
@@ -2226,6 +2249,26 @@
   version "11.2.10"
   resolved "https://registry.yarnpkg.com/@nrwl/tao/-/tao-11.2.10.tgz#f55b3b39a620615f5d4fd84cbe08af8e9ae871a8"
   integrity sha512-nOOuMDrdEd678HMlK9w7KhSGQJudN9Jr11k3MeTnroQrtGSzvN4FMW0tVynQWNJKbzLQeV3gQHNh8FsP9Pvo6Q==
+  dependencies:
+    "@angular-devkit/architect" "~0.1100.1"
+    "@angular-devkit/core" "~11.0.1"
+    "@angular-devkit/schematics" "~11.0.1"
+    chalk "4.1.0"
+    fs-extra "7.0.1"
+    inquirer "^6.3.1"
+    minimist "^1.2.5"
+    rxjs "^6.5.4"
+    rxjs-for-await "0.0.2"
+    semver "6.3.0"
+    strip-json-comments "2.0.1"
+    tmp "0.0.33"
+    tslib "^2.0.0"
+    yargs-parser "20.0.0"
+
+"@nrwl/tao@11.2.12":
+  version "11.2.12"
+  resolved "https://registry.yarnpkg.com/@nrwl/tao/-/tao-11.2.12.tgz#400925366ceaf1249b4a937ab8bf49c035cccddc"
+  integrity sha512-begYux5B080UaRMxGwBB5kixDcTMIEliPm7/1mIQ4DgMTunetN5pXOlZoEiYovVPByVjgLBzwzZfNkGvj7mSzg==
   dependencies:
     "@angular-devkit/architect" "~0.1100.1"
     "@angular-devkit/core" "~11.0.1"
@@ -15966,10 +16009,10 @@ ts-essentials@^2.0.3:
   resolved "https://registry.yarnpkg.com/ts-essentials/-/ts-essentials-2.0.12.tgz#c9303f3d74f75fa7528c3d49b80e089ab09d8745"
   integrity sha512-3IVX4nI6B5cc31/GFFE+i8ey/N2eA0CZDbo6n0yrz0zDX8ZJ8djmU1p+XRz7G3is0F3bB3pu2pAroFdAWQKU3w==
 
-ts-jest@26.5.0:
-  version "26.5.0"
-  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-26.5.0.tgz#3e3417d91bc40178a6716d7dacc5b0505835aa21"
-  integrity sha512-Ya4IQgvIFNa2Mgq52KaO8yBw2W8tWp61Ecl66VjF0f5JaV8u50nGoptHVILOPGoI7SDnShmEqnYQEmyHdQ+56g==
+ts-jest@26.5.1:
+  version "26.5.1"
+  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-26.5.1.tgz#4d53ee4481552f57c1624f0bd3425c8b17996150"
+  integrity sha512-G7Rmo3OJMvlqE79amJX8VJKDiRcd7/r61wh9fnvvG8cAjhA9edklGw/dCxRSQmfZ/z8NDums5srSVgwZos1qfg==
   dependencies:
     "@types/jest" "26.x"
     bs-logger "0.x"
