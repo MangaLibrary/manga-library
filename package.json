@@ -80,7 +80,7 @@
     "@babel/preset-typescript": "7.12.13",
     "@commitlint/cli": "11.0.0",
     "@commitlint/config-conventional": "11.0.0",
-    "@emotion/babel-preset-css-prop": "11.0.0",
+    "@emotion/babel-preset-css-prop": "11.2.0",
     "@nestjs/schematics": "7.2.7",
     "@nestjs/testing": "7.6.11",
     "@nrwl/cli": "11.2.10",
