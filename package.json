@@ -71,7 +71,7 @@
     "reflect-metadata": "0.1.13",
     "rxjs": "6.6.3",
     "tslib": "2.1.0",
-    "twin.macro": "2.2.2"
+    "twin.macro": "2.2.3"
   },
   "devDependencies": {
     "@babel/core": "7.12.13",
