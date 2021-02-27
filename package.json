@@ -90,7 +90,7 @@
     "@nrwl/nest": "11.3.2",
     "@nrwl/node": "11.3.2",
     "@nrwl/nx-cloud": "11.1.4",
-    "@nrwl/react": "11.3.2",
+    "@nrwl/react": "11.4.0",
     "@nrwl/storybook": "11.3.2",
     "@nrwl/tao": "11.3.2",
     "@nrwl/web": "11.3.2",
