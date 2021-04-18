@@ -18,10 +18,7 @@ updates:
   - package-ecosystem: 'npm'
     directory: '/'
     schedule:
-      interval: 'weekly'
-      timezone: 'Europe/Warsaw'
-      day: 'saturday'
-      time: '06:00'
+      interval: 'monthly'
     target-branch: 'main'
     open-pull-requests-limit: 20
     commit-message:
