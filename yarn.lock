@@ -2253,6 +2253,18 @@
     strip-json-comments "2.0.1"
     tslib "^2.0.0"
 
+"@nrwl/devkit@11.6.3":
+  version "11.6.3"
+  resolved "https://registry.yarnpkg.com/@nrwl/devkit/-/devkit-11.6.3.tgz#86b2560311ad1c8832be4110f4c1d2fe990aae36"
+  integrity sha512-KNL84AJS3IcsMyPbZD4qKdwgq7kYwrZhvTxAP5XYIpuwGSDfoEFFKgh0RKcKo+FIUtP0b5+CaJWtGEsobRnVjQ==
+  dependencies:
+    "@nrwl/tao" "11.6.3"
+    ejs "^3.1.5"
+    ignore "^5.0.4"
+    semver "7.3.4"
+    strip-json-comments "2.0.1"
+    tslib "^2.0.0"
+
 "@nrwl/eslint-plugin-nx@11.5.2":
   version "11.5.2"
   resolved "https://registry.yarnpkg.com/@nrwl/eslint-plugin-nx/-/eslint-plugin-nx-11.5.2.tgz#552a0b6f31c613412f8e9b7d293ddfed59fd3a40"
@@ -2269,6 +2281,17 @@
   integrity sha512-XXJboEUHiL25NGh3pHa1WIruSjIhYicsGG/vQHc+NB6BJKoWAsqzuldcC04uAq1baIefpU30oi38ya4zsb0grw==
   dependencies:
     "@nrwl/devkit" "11.5.2"
+    jest-resolve "^26.6.2"
+    rxjs "^6.5.4"
+    strip-json-comments "2.0.1"
+    tslib "^2.0.0"
+
+"@nrwl/jest@11.6.3":
+  version "11.6.3"
+  resolved "https://registry.yarnpkg.com/@nrwl/jest/-/jest-11.6.3.tgz#c97c0d97b0bcb6291718685e7bbc54c5ba8cd3e2"
+  integrity sha512-zgEsoCRNHhy7rKOpSP7RcAfnniD80zfG4SNEt7RQdVo+EVF2yv/SmRjl2zCB+iyDOT6ZgOQVmg0hwoFi7jAuGQ==
+  dependencies:
+    "@nrwl/devkit" "11.6.3"
     jest-resolve "^26.6.2"
     rxjs "^6.5.4"
     strip-json-comments "2.0.1"
@@ -2386,6 +2409,23 @@
     rxjs "^6.5.4"
     rxjs-for-await "0.0.2"
     semver "6.3.0"
+    strip-json-comments "2.0.1"
+    tmp "0.0.33"
+    tslib "^2.0.0"
+    yargs-parser "20.0.0"
+
+"@nrwl/tao@11.6.3":
+  version "11.6.3"
+  resolved "https://registry.yarnpkg.com/@nrwl/tao/-/tao-11.6.3.tgz#9dcb1f159d879d2746d6678b2f657fc6a23b8dc0"
+  integrity sha512-AknApJ0L8QbMztC1nXZPDi7ea6cx/bCdfEKHNTe+uB9vwj10I2utMVVUYxOcotjR44pOzDw8zttpI98PKX6AUw==
+  dependencies:
+    chalk "4.1.0"
+    fs-extra "7.0.1"
+    inquirer "^6.3.1"
+    minimist "^1.2.5"
+    rxjs "^6.5.4"
+    rxjs-for-await "0.0.2"
+    semver "7.3.4"
     strip-json-comments "2.0.1"
     tmp "0.0.33"
     tslib "^2.0.0"
@@ -3435,10 +3475,10 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@26.0.21":
-  version "26.0.21"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-26.0.21.tgz#3a73c2731e7e4f0fbaea56ce7ff8c79cf812bd24"
-  integrity sha512-ab9TyM/69yg7eew9eOwKMUmvIZAKEGZYlq/dhe5/0IMUd/QLJv5ldRMdddSn+u22N13FP3s5jYyktxuBwY0kDA==
+"@types/jest@26.0.23":
+  version "26.0.23"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-26.0.23.tgz#a1b7eab3c503b80451d019efb588ec63522ee4e7"
+  integrity sha512-ZHLmWMJ9jJ9PTiT58juykZpL7KjwJywFN3Rr2pTSkyQfydf/rk22yS7W8p5DaVUMQ2BQC7oYiU3FjbTM/mYrOA==
   dependencies:
     jest-diff "^26.0.0"
     pretty-format "^26.0.0"
@@ -16241,10 +16281,10 @@ ts-essentials@^2.0.3:
   resolved "https://registry.yarnpkg.com/ts-essentials/-/ts-essentials-2.0.12.tgz#c9303f3d74f75fa7528c3d49b80e089ab09d8745"
   integrity sha512-3IVX4nI6B5cc31/GFFE+i8ey/N2eA0CZDbo6n0yrz0zDX8ZJ8djmU1p+XRz7G3is0F3bB3pu2pAroFdAWQKU3w==
 
-ts-jest@26.5.4:
-  version "26.5.4"
-  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-26.5.4.tgz#207f4c114812a9c6d5746dd4d1cdf899eafc9686"
-  integrity sha512-I5Qsddo+VTm94SukBJ4cPimOoFZsYTeElR2xy6H2TOVs+NsvgYglW8KuQgKoApOKuaU/Ix/vrF9ebFZlb5D2Pg==
+ts-jest@26.5.6:
+  version "26.5.6"
+  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-26.5.6.tgz#c32e0746425274e1dfe333f43cd3c800e014ec35"
+  integrity sha512-rua+rCP8DxpA8b4DQD/6X2HQS8Zy/xzViVYfEs2OQu68tkCuKLV0Md8pmX55+W24uRIyAsf/BajRfxOs+R2MKA==
   dependencies:
     bs-logger "0.x"
     buffer-from "1.x"
